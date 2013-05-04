@@ -5,7 +5,7 @@ This is a simple web application that can be used as the server when running the
 
 Before running the tests, set the following environment variable:
 
-  export SOCKJS_URL=http://localhost:8080/spring-sockjs-protocol-webapp
+    export SOCKJS_URL=http://localhost:8080/spring-sockjs-protocol-webapp
 
 ### Tomcat
 
