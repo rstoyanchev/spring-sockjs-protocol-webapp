@@ -7,6 +7,14 @@ Before running the tests, set the following environment variable:
 
     export SOCKJS_URL=http://localhost:8080/spring-sockjs-protocol-webapp
 
+### Known Issues with Protocol Tests
+
+WebsocketHixie76/WebsocketHybi10/RawWebsocket: Java Servlet containers do not support older versions of the WebSocket protocol. See [issue 72](https://github.com/sockjs/sockjs-protocol/issues/72).
+
+HandlingClose: Servlet containers do not detect a client disconnect soon enough. The the next message (or heartbeat) after the disconnect will fail and at that point the session will be closed.
+
+JSONEncoding: this test requires a recent version of Jackson (see [JACKSON-884](http://jira.codehaus.org/browse/JACKSON-884))
+
 ### Tomcat
 
 Tomcat provides early JSR-356 support (WebSocket API for Java). You'll need to build the latest Tomcat source from trunk, which is relatively simple.

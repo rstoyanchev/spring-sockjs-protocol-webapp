@@ -13,3 +13,4 @@ $TOMCAT/bin/shutdown.sh
 sleep 3
 
 $TOMCAT/bin/startup.sh
+
