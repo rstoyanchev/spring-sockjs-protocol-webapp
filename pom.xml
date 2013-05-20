@@ -7,7 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
-		<org.springframework-version>4.0.0.BUILD-SNAPSHOT</org.springframework-version>
+		<org.springframework-version>4.0.0.M1</org.springframework-version>
 	</properties>
 
 	<dependencies>
@@ -37,6 +37,7 @@
 			<artifactId>spring-websocket</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.websocket</groupId>
 			<artifactId>javax.websocket-api</artifactId>
@@ -95,16 +96,10 @@
 
 	<repositories>
 		<repository>
-			<id>spring-snapshots</id>
-			<url>http://repo.springsource.org/snapshot</url>
+			<id>spring-milestones</id>
+			<url>http://repo.springsource.org/milestone</url>
 			<snapshots><enabled>true</enabled></snapshots>
-			<releases><enabled>false</enabled></releases>
-		</repository>
-		<repository>
-			<id>tomcat-snapshots</id>
-			<url>https://repository.apache.org/content/repositories/snapshots</url>
-			<snapshots><enabled>true</enabled></snapshots>
-			<releases><enabled>false</enabled></releases>
+			<releases><enabled>true</enabled></releases>
 		</repository>
 		<repository>
 			<id>java-net-snapshots]</id>
@@ -157,6 +152,16 @@
 				    <downloadSources>true</downloadSources>
 				    <downloadJavadocs>false</downloadJavadocs>
 				    <wtpversion>2.0</wtpversion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.0.3.v20130506</version>
+				<configuration>
+					<webApp>
+						<contextPath>/spring-sockjs-protocol-webapp</contextPath>
+					</webApp>
 				</configuration>
 			</plugin>
 		</plugins>

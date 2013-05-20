@@ -18,7 +18,7 @@ public class WebConfig {
 	public SimpleUrlHandlerMapping handlerMapping() {
 
 		DefaultSockJsService mainService = new DefaultSockJsService(sockJsTaskScheduler());
-		mainService.setValidSockJsPrefixes("/echo", "/close");
+		mainService.setValidSockJsPrefixes("/echo", "/close", "/cookie_needed_echo");
 		mainService.setStreamBytesLimit(4096);
 
 		DefaultSockJsService anotherService = new DefaultSockJsService(sockJsTaskScheduler());
@@ -28,8 +28,8 @@ public class WebConfig {
 		Map<String, Object> urlMap = new HashMap<String, Object>();
 		urlMap.put("/echo/**", new SockJsHttpRequestHandler(mainService, new EchoHandler()));
 		urlMap.put("/close/**", new SockJsHttpRequestHandler(mainService, new CloseHandler()));
-		urlMap.put("/disabled_websocket_echo/**", new SockJsHttpRequestHandler(anotherService, new EchoHandler()));
 		urlMap.put("/cookie_needed_echo/**", new SockJsHttpRequestHandler(mainService, new EchoHandler()));
+		urlMap.put("/disabled_websocket_echo/**", new SockJsHttpRequestHandler(anotherService, new EchoHandler()));
 
 		SimpleUrlHandlerMapping hm = new SimpleUrlHandlerMapping();
 		hm.setUrlMap(urlMap);

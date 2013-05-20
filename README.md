@@ -41,7 +41,7 @@ A usable Tomcat installation can be found in `output/build`
 
 ### Jetty 9
 
-Download and use the latest Jetty (e.g. 9.0.2.v20130417). It does not support JSR-356 yet but that's not an issue, since we're using the Jetty 9 native WebSocket API.
+The latest Jetty (currently 9.0.3.v20130506) does not yet support JSR-356. However, it does provide a native WebSocket API that can be used istead.
 
 If using Java-based Servlet configuration instead of web.xml, add the following options to Jetty's start.ini:
 
