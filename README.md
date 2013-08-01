@@ -15,35 +15,19 @@ HandlingClose: Servlet containers do not detect a client disconnect soon enough.
 
 JSONEncoding: this test requires a recent version of Jackson (see [JACKSON-884](http://jira.codehaus.org/browse/JACKSON-884))
 
-### Tomcat
+### Tomcat 8
 
-Tomcat provides early JSR-356 support (WebSocket API for Java). You'll need to build the latest Tomcat source from trunk, which is relatively simple.
+At present Tomcat 8 is available as snapshots only (alpha release is forthcoming). Spring Framework 4.0 M2 release has been tested with [this snapshot](https://repository.apache.org/content/repositories/snapshots/org/apache/tomcat/tomcat/8.0-SNAPSHOT/tomcat-8.0-20130430.222112-4.tar.gz). When using a more recent snapshot, you may also have to switch to Spring Framework 4.0.0.BUILD-SNAPSHOT.
 
-Check out Tomcat trunk:
-
-    mkdir tomcat
-    cd tomcat
-    svn co http://svn.apache.org/repos/asf/tomcat/trunk/
-    cd trunk
-
-Create `build.properties` in the trunk directory with similar content:
-
-    # ----- Default Base Path for Dependent Packages -----
-    # Replace this path with the path where dependencies binaries should be downloaded
-    base.path=~/dev/sources/apache/tomcat/download
-
-Run the ant build:
-
-    ant clean
-    ant
-
-A usable Tomcat installation can be found in `output/build`
+After unzipping Tomcat 8, set `TOMCAT8_HOME` as an environment variable and use [deployTomcat8.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/deployTomcat8.sh) and [shutdownTomcat8.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/shutdownTomcat8.sh) in this directory.
 
 ### Jetty 9
 
-The latest Jetty (currently 9.0.3.v20130506) does not yet support JSR-356. However, it does provide a native WebSocket API that can be used istead.
+The easiest way to run on Jetty 9.0.4:
 
-If using Java-based Servlet configuration instead of web.xml, add the following options to Jetty's start.ini:
+    mvn jetty:run
+
+**Note:** To deploy to a Jetty installation, add this to Jetty's `start.ini`:
 
     OPTIONS=plus
     etc/jetty-plus.xml
@@ -52,20 +36,12 @@ If using Java-based Servlet configuration instead of web.xml, add the following 
 
 ### Glassfish
 
-Glassfish 4 provides JSR-356 support.
+After unzipping Glassfish 4 start the server:
 
-Download a [Glassfish 4 build](http://dlc.sun.com.edgesuite.net/glassfish/4.0/) (e.g. glassfish-4.0-b84.zip from the promoted builds)
+    <unzip_dir>/glassfish4/bin/asadmin start-domain
 
-Unzip the downloaded file.
+Set `GLASSFISH4_HOME` as an environment variable and use [deployGlassfish.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/deployGlassfish.sh) in this directory.
 
-Start the server:
 
-    cd <unzip_dir>/glassfish4
-    bin/asadmin start-domain
-
-Deploy the WAR file and watch the logs:
-
-    cd <unzip_dir>/glassfish4
-    less `glassfish/domains/domain1/logs/server.log`
 
 
