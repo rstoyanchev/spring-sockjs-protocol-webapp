@@ -1,4 +1,3 @@
-
 ## Overview
 
 This is a simple web application that can be used as the server when running the [SockJS protocol](https://github.com/sockjs/sockjs-protocol) tests. It is built on the Spring WebSocket and SockJS support, currently in development for Spring Framework 4.0, and can be run on one of the servers listed further below.
@@ -17,7 +16,7 @@ JSONEncoding: this test requires a recent version of Jackson (see [JACKSON-884](
 
 ### Tomcat 8
 
-At present Tomcat 8 is available as snapshots only (alpha release is forthcoming). Spring Framework 4.0 M2 release has been tested with [this snapshot](https://repository.apache.org/content/repositories/snapshots/org/apache/tomcat/tomcat/8.0-SNAPSHOT/tomcat-8.0-20130430.222112-4.tar.gz). When using a more recent snapshot, you may also have to switch to Spring Framework 4.0.0.BUILD-SNAPSHOT.
+Check the [Tomcat home page](http://tomcat.apache.org/) for the latest Tomcat 8 release, currently `RC1 alpha`. 
 
 After unzipping Tomcat 8, set `TOMCAT8_HOME` as an environment variable and use [deployTomcat8.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/deployTomcat8.sh) and [shutdownTomcat8.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/shutdownTomcat8.sh) in this directory.
 
