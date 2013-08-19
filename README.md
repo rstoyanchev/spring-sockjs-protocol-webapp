@@ -22,7 +22,7 @@ After unzipping Tomcat 8, set `TOMCAT8_HOME` as an environment variable and use 
 
 ### Jetty 9
 
-The easiest way to run on Jetty 9.0.4:
+The easiest way to run on Jetty 9 (currently 9.0.5):
 
     mvn jetty:run
 
