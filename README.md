@@ -10,7 +10,7 @@ Before running the tests, set the following environment variable:
 
 WebsocketHixie76/WebsocketHybi10/RawWebsocket: Java Servlet containers do not support older versions of the WebSocket protocol. See [issue 72](https://github.com/sockjs/sockjs-protocol/issues/72).
 
-HandlingClose: Servlet containers do not detect a client disconnect soon enough. The the next message (or heartbeat) after the disconnect will fail and at that point the session will be closed.
+HandlingClose: Servlet containers do not detect a client disconnect soon enough. The the next message (or heartbeat) after the disconnect will fail and at that point the session will be closed. See [SERVLET_SPEC-44](https://java.net/jira/browse/SERVLET_SPEC-44)
 
 JSONEncoding: this test requires a recent version of Jackson (see [JACKSON-884](http://jira.codehaus.org/browse/JACKSON-884))
 
