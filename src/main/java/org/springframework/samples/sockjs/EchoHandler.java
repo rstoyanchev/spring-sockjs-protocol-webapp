@@ -2,9 +2,9 @@ package org.springframework.samples.sockjs;
 
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
-import org.springframework.web.socket.adapter.TextWebSocketHandlerAdapter;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-public class EchoHandler extends TextWebSocketHandlerAdapter {
+public class EchoHandler extends TextWebSocketHandler {
 
 
 	@Override

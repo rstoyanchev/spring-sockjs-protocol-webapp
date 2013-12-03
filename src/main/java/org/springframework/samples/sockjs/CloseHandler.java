@@ -1,9 +1,9 @@
 package org.springframework.samples.sockjs;
 
 import org.springframework.web.socket.WebSocketSession;
-import org.springframework.web.socket.adapter.TextWebSocketHandlerAdapter;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-public class CloseHandler extends TextWebSocketHandlerAdapter {
+public class CloseHandler extends TextWebSocketHandler {
 
 
 	@Override
