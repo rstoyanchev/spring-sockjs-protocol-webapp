@@ -16,13 +16,13 @@ JSONEncoding: this test requires a recent version of Jackson (see [JACKSON-884](
 
 ### Tomcat 8
 
-Check the [Tomcat home page](http://tomcat.apache.org/) for the latest Tomcat 8 release, currently `RC1 alpha`. 
+Check the [Tomcat home page](http://tomcat.apache.org/) for the latest Tomcat 8 release. You can also use Tomcat 7.0.47+.
 
 After unzipping Tomcat 8, set `TOMCAT8_HOME` as an environment variable and use [deployTomcat8.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/deployTomcat8.sh) and [shutdownTomcat8.sh](https://github.com/rstoyanchev/spring-sockjs-protocol-webapp/blob/master/shutdownTomcat8.sh) in this directory.
 
 ### Jetty 9
 
-The easiest way to run on Jetty 9 (currently 9.0.5):
+The easiest way to run on Jetty 9.1:
 
     mvn jetty:run
 
