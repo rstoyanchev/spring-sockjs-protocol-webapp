@@ -84,13 +84,13 @@
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
-			<url>http://repo.springsource.org/snapshot</url>
+			<url>https://repo.springsource.org/snapshot</url>
 			<snapshots><enabled>true</enabled></snapshots>
 			<releases><enabled>false</enabled></releases>
 		</repository>
 		<repository>
 			<id>spring-milestones</id>
-			<url>http://repo.springsource.org/libs-milestone</url>
+			<url>https://repo.springsource.org/libs-milestone</url>
 			<snapshots><enabled>false</enabled></snapshots>
 			<releases><enabled>true</enabled></releases>
 		</repository>
